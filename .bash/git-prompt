@@ -1,0 +1,25 @@
+parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+parse_git_tag () {
+  git describe --tags 2> /dev/null
+}
+
+if_modified () {
+  git status -uall 2> /dev/null | grep -E "(modified|Untracked)" > /dev/null 2>&1
+}
+
+parse_git_branch_or_tag() {
+  local OUT="$(parse_git_branch)"
+  if [ "$OUT" == " ((no branch))" ]; then
+    OUT="($(parse_git_tag))";
+  fi
+
+  if_modified
+  if [ $? -eq 0 ] ; then
+    local MOD_MARK="*" # 変更があった場合につける目印
+    OUT=$OUT$MOD_MARK
+  fi
+  echo $OUT
+}
