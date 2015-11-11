@@ -25,6 +25,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Display git information to prompt.
-source ./.bash/git-prompt
-source ./.bash/git-completion.bash
+source ~/.bash/git-prompt
+source ~/.bash/git-completion.bash
 PS1="[\h \W \[\033[31m\]\$(parse_git_branch_or_tag)\[\033[0m\]] "
