@@ -1,5 +1,6 @@
 alias ls='ls -G'
 alias ll='ls -alh'
+alias awk='gawk'
 if type "colordiff" > /dev/null 2>&1
     then
     alias diff='colordiff'
