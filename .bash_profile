@@ -1,5 +1,6 @@
 alias ls='ls -G'
 alias ll='ls -alh'
+
 if type "colordiff" > /dev/null 2>&1
     then
     alias diff='colordiff'
@@ -24,7 +25,12 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
  . $(brew --prefix)/etc/bash_completion
 fi
 
-# Display git information to prompt.
-source ~/.bash/git-prompt
-source ~/.bash/git-completion.bash
-PS1="[\h \W \[\033[31m\]\$(parse_git_branch_or_tag)\[\033[0m\]] "
+source $HOME/.bash/git-completion.bash
+source $HOME/.bash/git-prompt.sh
+
+# prompt settings
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWSTASHSTATE=1
+export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\W\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
