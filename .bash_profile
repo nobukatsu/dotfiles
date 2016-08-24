@@ -17,11 +17,6 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE=”history*:cd*:ls*”
 export HISTSIZE=100000
 
-# Enable bash-completion.
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
- . $(brew --prefix)/etc/bash_completion
-fi
-
 source $HOME/.bash/git-completion.bash
 source $HOME/.bash/git-prompt.sh
 
