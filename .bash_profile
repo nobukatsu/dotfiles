@@ -21,6 +21,13 @@ export HISTCONTROL=ignoredups
 # Ignore frequently used command.
 export HISTIGNORE=”history*:cd*:ls*”
 export HISTSIZE=100000
+# CUDA
+export CUDA_ROOT=/usr/local/cuda
+export PATH=$CUDA_ROOT/bin:$PATH
+export DYLD_LIBRARY_PATH=$CUDA_ROOT/lib:$PATH
+
+# pyenv
+eval "$(pyenv init -)"
 
 # Enable bash-completion.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
