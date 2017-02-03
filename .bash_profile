@@ -25,6 +25,11 @@ export HISTSIZE=100000
 export CUDA_ROOT=/usr/local/cuda
 export PATH=$CUDA_ROOT/bin:$PATH
 export DYLD_LIBRARY_PATH=$CUDA_ROOT/lib:$PATH
+# Oracle
+export ORACLE_HOME=~/devel/library/oracle/instantclient_12_1
+export PATH=$ORACLE_HOME:$PATH
+export DYLD_LIBRARY_PATH=$ORACLE_HOME:$DYLD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME
 
 # pyenv
 eval "$(pyenv init -)"
