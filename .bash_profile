@@ -37,3 +37,8 @@ if type "jenv" > /dev/null 2>&1; then
     export PATH=$HOME/.jenv/bin:$PATH
     eval "$(jenv init -)"
 fi
+
+# pyenv
+if type "pyenv" > /dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
