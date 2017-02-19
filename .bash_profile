@@ -17,6 +17,11 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE=”history*:cd*:ls*”
 export HISTSIZE=100000
 
+# editor
+if type "atom" > /dev/null 2>&1; then
+    export EDITOR=atom
+fi
+
 # Enable bash-completion.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
  . $(brew --prefix)/etc/bash_completion
