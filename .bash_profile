@@ -42,3 +42,11 @@ fi
 if type "pyenv" > /dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
+
+# oracle
+if [ -e ~/devel/library/oracle/instantclient_12_1 ]; then
+    export ORACLE_HOME=~/devel/library/oracle/instantclient_12_1
+    export PATH=$ORACLE_HOME:$PATH
+    export DYLD_LIBRARY_PATH=$ORACLE_HOME
+    export LD_LIBRARY_PATH=$ORACLE_HOME
+fi
