@@ -5,6 +5,10 @@ if type "colordiff" > /dev/null 2>&1
     then
     alias diff='colordiff'
 fi
+if type 'greadlink' > /dev/null 2>&1
+    then
+    alias readlink='greadlink'
+fi
 
 export GREP_OPTIONS="--color=always"
 
