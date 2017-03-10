@@ -54,4 +54,5 @@ if [ -e ~/devel/library/oracle/instantclient_12_1 ]; then
     export PATH=$ORACLE_HOME:$PATH
     export DYLD_LIBRARY_PATH=$ORACLE_HOME
     export LD_LIBRARY_PATH=$ORACLE_HOME
+    export FORCE_RPATH=1
 fi
