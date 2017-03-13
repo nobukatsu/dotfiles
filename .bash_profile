@@ -20,6 +20,8 @@ export HISTCONTROL=ignoredups
 # Ignore frequently used command.
 export HISTIGNORE=”history*:cd*:ls*”
 export HISTSIZE=100000
+# locale
+export LC_ALL=ja_JP.UTF-8
 
 # editor
 if type "atom" > /dev/null 2>&1; then
