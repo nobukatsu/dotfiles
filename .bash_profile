@@ -49,11 +49,6 @@ if type "jenv" > /dev/null 2>&1; then
     eval "$(jenv init -)"
 fi
 
-# pyenv
-if type "pyenv" > /dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
-
 # oracle
 if [ -e ~/devel/library/oracle/instantclient_12_1 ]; then
     export ORACLE_HOME=~/devel/library/oracle/instantclient_12_1
