@@ -28,6 +28,10 @@ if type "atom" > /dev/null 2>&1; then
     export EDITOR=atom
 fi
 
+if type "nodebrew" > /dev/null 2>&1; then
+    export PATH=$PATH:~/.nodebrew/current/bin
+fi
+
 # Enable bash-completion.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
  . $(brew --prefix)/etc/bash_completion
@@ -35,6 +39,7 @@ fi
 
 source $HOME/.bash/git-completion.bash
 source $HOME/.bash/git-prompt.sh
+source $HOME/.bash/maven.bash
 
 # prompt settings
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -56,4 +61,9 @@ if [ -e ~/devel/library/oracle/instantclient_12_1 ]; then
     export DYLD_LIBRARY_PATH=$ORACLE_HOME
     export LD_LIBRARY_PATH=$ORACLE_HOME
     export FORCE_RPATH=1
+fi
+
+# PostgreSQL
+if type "psql" > /dev/null 2>&1; then
+    export DATABASE_URL=postgres:///nobukatsu
 fi
