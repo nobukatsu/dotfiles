@@ -1,5 +1,6 @@
 alias ls='ls -G'
 alias ll='ls -alh'
+alias less='less -X'
 
 if type "colordiff" > /dev/null 2>&1
     then
@@ -22,6 +23,11 @@ export HISTIGNORE=”history*:cd*:ls*”
 export HISTSIZE=100000
 # locale
 export LC_ALL=ja_JP.UTF-8
+# source-highlight
+if [ -e /usr/local/bin/src-hilite-lesspipe.sh ]; then
+    export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+    export LESS=" -R "
+fi
 
 # editor
 if type "atom" > /dev/null 2>&1; then
