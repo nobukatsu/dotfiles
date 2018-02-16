@@ -10,6 +10,10 @@ if type 'greadlink' > /dev/null 2>&1
     then
     alias readlink='greadlink'
 fi
+if type 'gdate' > /dev/null 2>&1
+    then
+    alias date='gdate'
+fi
 
 export GREP_OPTIONS="--color=always"
 
