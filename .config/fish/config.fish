@@ -7,6 +7,25 @@ set __fish_git_prompt_color_branch yellow
 set __fish_git_prompt_color_upstream_ahead green
 set __fish_git_prompt_color_upstream_behind red
 
-# env
-set LC_ALL ja_JP.UTF-8
-set LC_CTYPE ja_JP.utf8
+# alias
+if type -q 'colordiff'
+    alias diff='colordiff'
+end
+if type -q 'gsed'
+    alias sed='gsed'
+end
+if type -q 'greadlink'
+    alias readlink='greadlink'
+end
+if type -q 'gdate'
+    alias date='gdate'
+end
+
+# source-highlight
+if [ -e /usr/local/bin/src-hilite-lesspipe.sh ]
+    set -gx LESSOPEN "| /usr/local/bin/src-hilite-lesspipe.sh %s"
+    set -gx LESS " -R "
+end
+
+# locale
+set -gx LC_ALL "ja_JP.UTF-8"
