@@ -14,6 +14,10 @@ if type 'gdate' > /dev/null 2>&1
     then
     alias date='gdate'
 fi
+if type 'gsed' > /dev/null 2>&1
+    then
+    alias sed='gsed'
+fi
 
 export GREP_OPTIONS="--color=always"
 
@@ -77,3 +81,6 @@ fi
 if type "psql" > /dev/null 2>&1; then
     export DATABASE_URL=postgres:///nobukatsu
 fi
+
+# fzf
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
