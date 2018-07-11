@@ -29,3 +29,8 @@ end
 
 # locale
 set -gx LC_ALL "ja_JP.UTF-8"
+
+# cheat.sh
+function cheat.sh
+    curl cheat.sh/$argv
+end
