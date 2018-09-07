@@ -20,6 +20,12 @@ end
 if type -q 'gdate'
     alias date='gdate'
 end
+if type -q 'bat'
+    alias cat='bat'
+end
+if type -q 'bat'
+    alias less='bat'
+end
 
 # source-highlight
 if [ -e /usr/local/bin/src-hilite-lesspipe.sh ]
