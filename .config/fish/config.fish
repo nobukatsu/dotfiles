@@ -27,6 +27,9 @@ if type -q 'bat'
     alias less='bat'
 end
 
+# fzf
+set -U FZF_LEGACY_KEYBINDINGS 1
+
 # source-highlight
 if [ -e /usr/local/bin/src-hilite-lesspipe.sh ]
     set -gx LESSOPEN "| /usr/local/bin/src-hilite-lesspipe.sh %s"
@@ -40,3 +43,17 @@ set -gx LC_ALL "ja_JP.UTF-8"
 function cheat.sh
     curl cheat.sh/$argv
 end
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/nirifuji/.nodebrew/node/v10.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/nirifuji/.nodebrew/node/v10.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/nirifuji/.nodebrew/node/v10.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish ]; and . /Users/nirifuji/.nodebrew/node/v10.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish
+
+# PATH
+set PATH /Users/$USER/.local $PATH # PyCharm
+set PATH /Users/$USER/.fastlane/bin $PATH # fastlane
+
+# pyenv
+eval (pyenv init - | source)
