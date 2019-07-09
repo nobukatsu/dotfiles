@@ -38,8 +38,8 @@ if [ -e /usr/local/bin/src-hilite-lesspipe.sh ]; then
 fi
 
 # editor
-if type "atom" > /dev/null 2>&1; then
-    export EDITOR=atom
+if type "code" > /dev/null 2>&1; then
+    export EDITOR=code
 fi
 
 if type "nodebrew" > /dev/null 2>&1; then
