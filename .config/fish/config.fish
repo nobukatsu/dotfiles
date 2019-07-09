@@ -23,9 +23,6 @@ end
 if type -q 'bat'
     alias cat='bat'
 end
-if type -q 'bat'
-    alias less='bat'
-end
 
 # fzf
 set -U FZF_LEGACY_KEYBINDINGS 1
@@ -54,6 +51,10 @@ end
 # PATH
 set PATH /Users/$USER/.local $PATH # PyCharm
 set PATH /Users/$USER/.fastlane/bin $PATH # fastlane
+set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH #coreutils
 
 # pyenv
 eval (pyenv init - | source)
+
+# direnv
+eval (direnv hook fish)
