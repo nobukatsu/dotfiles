@@ -39,6 +39,10 @@ fpath=(~/.zsh/completions $fpath)
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
 # kubectl
 source <(kubectl completion zsh)
 
