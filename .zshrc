@@ -30,7 +30,12 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # git-prompt
 source ~/.git-prompt.sh
-setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+setopt PROMPT_SUBST
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 
 # git-completion
 fpath=(~/.zsh/completions $fpath)
