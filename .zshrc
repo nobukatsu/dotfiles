@@ -14,10 +14,13 @@ alias ls='gls --color=auto'
 alias ll='gls -al --color=auto'
 alias awk='gawk'
 
+# general paths
+export PATH="/usr/local/bin:$PATH"
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 
 # pipenv
 export PIPENV_VENV_IN_PROJECT=1
@@ -27,6 +30,9 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # node
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
+# MySQL Client
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # git-prompt
 source ~/.git-prompt.sh
